@@ -443,7 +443,7 @@ function startGame() {
       <div class="game-cat-name">${c.name}</div>
     </div>`).join('');
 
-  let timeLeft = 11;
+  let timeLeft = 10;
   const circle = document.getElementById('timer-circle');
   const numberEl = document.getElementById('timer-number');
   circle.style.strokeDasharray = CIRCUMFERENCE;
@@ -455,9 +455,9 @@ function startGame() {
   timerInterval = setInterval(() => {
     timeLeft--;
     numberEl.textContent = timeLeft;
-    circle.style.strokeDashoffset = CIRCUMFERENCE * ((11 - timeLeft) / 10);
+    circle.style.strokeDashoffset = CIRCUMFERENCE * ((10 - timeLeft) / 10);
     if (timeLeft <= 2) { circle.style.stroke = 'var(--danger)'; numberEl.style.color = 'var(--danger)'; }
-    if (timeLeft <= 0) {
+    if (timeLeft < 0) {
       clearInterval(timerInterval);
       numberEl.textContent = '0';
       document.getElementById('timer-expired-msg').style.display = 'block';
