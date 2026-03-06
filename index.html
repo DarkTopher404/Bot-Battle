@@ -452,16 +452,20 @@ function startGame() {
   numberEl.style.color = 'var(--accent3)';
   numberEl.textContent = 10;
 
-  timerInterval = setInterval(() => {
+timerInterval = setInterval(() => {
     timeLeft--;
-    numberEl.textContent = timeLeft;
-    circle.style.strokeDashoffset = CIRCUMFERENCE * ((10 - timeLeft) / 10);
-    if (timeLeft <= 2) { circle.style.stroke = 'var(--danger)'; numberEl.style.color = 'var(--danger)'; }
+
     if (timeLeft < 0) {
       clearInterval(timerInterval);
       numberEl.textContent = '0';
+      circle.style.strokeDashoffset = CIRCUMFERENCE;
       document.getElementById('timer-expired-msg').style.display = 'block';
+      return;
     }
+
+    numberEl.textContent = timeLeft;
+    circle.style.strokeDashoffset = CIRCUMFERENCE * ((10 - timeLeft) / 10);
+    if (timeLeft <= 2) { circle.style.stroke = 'var(--danger)'; numberEl.style.color = 'var(--danger)'; }
   }, 1000);
 }
 
