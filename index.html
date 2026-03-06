@@ -173,7 +173,7 @@
       <div class="cat-num">03</div>
       <div class="cat-text">
         <div class="cat-title">Stadt Land Fluss+</div>
-        <div class="cat-desc">3 Kategorien, 1 Buchstabe, 5 Sekunden</div>
+        <div class="cat-desc">3 Kategorien, 1 Buchstabe, 10 Sekunden</div>
       </div>
       <div class="cat-arrow">›</div>
     </button>
@@ -216,7 +216,7 @@
       <div id="game-start">
         <p class="game-intro-text">
           Beim Start: <strong style="color:var(--accent3)">3 zufällige Kategorien</strong> + <strong style="color:var(--accent3)">1 Buchstabe</strong>.<br>
-          Du hast <strong style="color:var(--accent3)">5 Sekunden</strong> Denkzeit!
+          Du hast <strong style="color:var(--accent3)">10 Sekunden</strong> Denkzeit!
         </p>
         <button class="btn btn-pink btn-lg" onclick="startGame()">▶ SPIEL STARTEN</button>
       </div>
@@ -443,14 +443,14 @@ function startGame() {
       <div class="game-cat-name">${c.name}</div>
     </div>`).join('');
 
-  let timeLeft = 5;
+  let timeLeft = 10;
   const circle = document.getElementById('timer-circle');
   const numberEl = document.getElementById('timer-number');
   circle.style.strokeDasharray = CIRCUMFERENCE;
   circle.style.strokeDashoffset = 0;
   circle.style.stroke = 'var(--accent3)';
   numberEl.style.color = 'var(--accent3)';
-  numberEl.textContent = 5;
+  numberEl.textContent = 10;
 
   timerInterval = setInterval(() => {
     timeLeft--;
