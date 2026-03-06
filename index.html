@@ -455,7 +455,7 @@ function startGame() {
   timerInterval = setInterval(() => {
     timeLeft--;
     numberEl.textContent = timeLeft;
-    circle.style.strokeDashoffset = CIRCUMFERENCE * ((10 - timeLeft) / 10);
+    circle.style.strokeDashoffset = CIRCUMFERENCE * ((11 - timeLeft) / 10);
     if (timeLeft <= 2) { circle.style.stroke = 'var(--danger)'; numberEl.style.color = 'var(--danger)'; }
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
